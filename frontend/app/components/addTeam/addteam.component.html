@@ -1,0 +1,29 @@
+
+<h1>Team Registration</h1>
+<form class="form" #f="ngForm" >
+<div>
+  <div class="a">
+        <div class="col-4">
+            
+            Team Name: <input  type="text"  name="teamname" id="name" class="form-control" 
+                [(ngModel)] = "team.teamname"  
+                required
+                #teamTeam = "ngModel">
+                    <div class="help-block" *ngIf="!teamTeam.valid && teamTeam.touched">
+                        Please enter team name.
+                    </div>
+            <button (click)=addPlayer() class="btn btn-success" [disabled]="!f.valid"  style="margin-right: 30px">Add Player</button>       
+        </div>
+
+    </div>
+    <div>
+        <!--<div [hidden]='bodyDiv'>
+            <app-header [bindName]='team.tid'></app-header>
+          </div>        -->
+        
+         <button type="button" class="btn btn-primary" [disabled]="!f.valid" (click)="registerTeam()">
+                            Save Team</button> </div> 
+
+</div>    
+</form>
+

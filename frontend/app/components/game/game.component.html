@@ -1,0 +1,92 @@
+<!--<div class="d-block">
+  <h3>Teams</h3>
+    <div class="d-block" style="float:left"  *ngFor="let team of teams">
+       <h6 class="d-block">{{ team.teamname }} ,</h6>
+     </div>
+</div>--><h1>Winner is {{winnerTeam}} {{winnerName}}:{{aaa}} </h1>
+<div class="list-group">
+  <h3>Teams</h3>
+  <div class="list-group-item" *ngFor="let team of teams">
+    <div class="d-block">
+      <h6 class="d-inline">{{ team.teamname }}</h6>
+    </div>
+  </div>
+  <button (click)=randomTeam() class="btn btn-success" style="margin-right: 30px">Select Team</button>
+  <button (click)=randomPlayer() class="btn btn-success" style="margin-right: 30px">Select Players</button>
+</div>
+<div>
+  <button (click)=maxScore() class="btn btn-success" style="margin-right: 30px">Winner</button>
+</div>
+
+<div class="list-group">
+  <div class="list-group-item" *ngIf="randomteam && randomteam.length>0">
+   <div style="width:50%;height:50%;float:left;">
+    <h3>Round1</h3>
+    <h6>Team:{{randomteam[0].teamname}}</h6>
+    <h6 class="d-inline" *ngIf="randomplayer1 ">{{randomplayer1[0].playername}}: <input type="number" id="number1"
+        min="2" max="10">
+      {{randomplayer1[1].playername}}: <input type="number" disabled min="2" max="10">
+    </h6>
+
+    <h6>Team :{{randomteam[1].teamname}}</h6>
+    <h6 class="d-inline" *ngIf="randomplayer2 ">{{randomplayer2[0].playername}}:<input type="number" disabled min="2"
+        max="10">
+      {{randomplayer2[1].playername}}:<input type="number" id="number2" min="2" max="10">
+    </h6>
+
+    <h6>Team:{{randomteam[2].teamname}}</h6>
+    <h6 class="d-inline" *ngIf="randomplayer3 ">{{randomplayer3[0].playername}}:<input type="number" disabled min="2"
+        max="10">
+      {{randomplayer3[1].playername}}:<input type="number" id="number3" min="2" max="10">
+    </h6>
+    <button id="1" (click)=addRound1Score() class="btn btn-success" style="margin-right: 30px">Add Scores of
+      Round1</button>
+      <div style="width:25%;height:50%;float:left;">
+    <h3>Turn:Scores</h3>
+    <h6 class="d-inline" *ngIf="randomplayer1">{{randomplayer1[0].playername}}:{{randx}}</h6>
+    <h6 class="d-inline" *ngIf="randomplayer2">{{randomplayer2[1].playername}}:{{randy}}</h6>
+    <h6 class="d-inline" *ngIf="randomplayer3">{{randomplayer3[1].playername}}:{{randz}} </h6>
+         </div>
+    <h3>Round1:TotalScores</h3>
+    <h6 class="d-inline" *ngIf="randomplayer1 ">{{randomplayer1[0].playername}}:{{s1}}</h6>
+    <h6 class="d-inline" *ngIf="randomplayer2 ">{{randomplayer2[1].playername}}:{{s2}}</h6>
+    <h6 class="d-inline" *ngIf="randomplayer3 ">{{randomplayer3[1].playername}}:{{s3}} </h6>
+   </div>
+
+
+  <h3>Round2</h3>
+  <!--<div class="d-block" style="float:left" *ngIf="randomteam && randomteam.length>0">-->
+    <h6>Team:{{randomteam[0].teamname}}</h6>
+    <h6 class="d-block" *ngIf="randomplayer1 ">{{randomplayer1[0].playername}}: <input type="number" disabled min="2"
+        max="10">
+      {{randomplayer1[1].playername}}: <input type="number" id="number4" min="2" max="10">
+    </h6>
+
+    <h6>Team :{{randomteam[1].teamname}}</h6>
+    <h6 class="d-block" *ngIf="randomplayer2 ">{{randomplayer2[0].playername}}:<input type="number" id="number5" min="2"
+        max="10">
+      {{randomplayer2[1].playername}}:<input type="number" disabled min="2" max="10">
+    </h6>
+
+    <h6>Team:{{randomteam[2].teamname}}</h6>
+    <h6 class="d-block" *ngIf="randomplayer3 ">{{randomplayer3[0].playername}}:<input type="number" id="number6" min="2"
+        max="10">
+      {{randomplayer3[1].playername}}:<input type="number" disabled min="2" max="10">
+    </h6>
+    <button id="2" (click)=addRound2Score() class="btn btn-success" style="margin-right: 30px">Add Scores of
+      Round2</button>
+      <div style="width:25%;height:50%;float:left;">
+    <h3>Turn:Scores</h3>
+    <h6 class="d-block" *ngIf="randomplayer1">{{randomplayer1[1].playername}}:{{randa}}</h6>
+    <h6 class="d-block" *ngIf="randomplayer2">{{randomplayer2[0].playername}}:{{randb}}</h6>
+    <h6 class="d-block" *ngIf="randomplayer3">{{randomplayer3[0].playername}}:{{randc}} </h6>
+       </div>
+
+  <h3>Round2:TotalScores</h3>
+  <h6 class="d-block" *ngIf="randomplayer1 ">{{randomplayer1[1].playername}}:{{ts1}}</h6>
+  <h6 class="d-block" *ngIf="randomplayer2  ">{{randomplayer2[0].playername}}:{{ts2}}</h6>
+  <h6 class="d-block" *ngIf="randomplayer3 ">{{randomplayer3[0].playername}}:{{ts3}} </h6>
+  </div>
+</div>
+
+<!-- <h6 class="d-block" >{{randomplayer3[0].playername}}:{{randc}} </h6> -->

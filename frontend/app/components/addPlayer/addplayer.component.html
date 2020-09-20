@@ -1,0 +1,47 @@
+<h1>Player Registration</h1>
+
+<form class="form" #f="ngForm" >
+
+    <div class="a">
+        <div class="list-group-item" >
+           <h6> Player Name: <input type="text" name="playername" class="form-control" [(ngModel)]="player.playername" required
+                #teamTeam="ngModel">
+            <div class="help-block" *ngIf="!teamTeam.valid && teamTeam.touched">
+                Please enter player name.
+            </div>
+          </h6>
+          <h6>
+            Age: <input type="number" name="age" class="form-control" [(ngModel)]="player.age" required
+                 min="18"
+                #teamTeam="ngModel">
+            <div class="help-block" *ngIf="!teamTeam.valid && teamTeam.touched">
+                Please enter players age.
+               
+            </div>
+          </h6>  
+          <h6>  
+            Player Caption: <input type="text" name="caption" class="form-control" [(ngModel)]="player.caption" >
+          </h6>
+          <h6>  
+            Team Name: <input type="text" name="playersteam" class="form-control"  [(ngModel)]="player.playersteam" 
+            required
+            #teamTeam="ngModel">
+            <div class="help-block" *ngIf="!teamTeam.valid && teamTeam.touched">
+                Please enter team name.
+            </div> 
+          </h6>    
+              <!-- <app-header (buttonClicked)='savePlaye($event)'></app-header>
+               <p *ngIf="player.teamid">Hello {{ name }} </p> 
+
+              <p> Team Id: {{player_tid}}</p> -->
+        </div>
+     
+    </div>
+    <button (click)="savePlayer()" class="btn btn-success" [disabled]="!f.valid"  style="margin-right: 30px">Save Player</button> 
+    
+
+    <button  (click)="submit()" id="3" class="btn btn-success" disabled  style="margin-right: 30px">Start Game</button>
+
+
+</form>
+

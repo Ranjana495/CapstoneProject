@@ -40,7 +40,9 @@ export class AddteamComponent implements OnInit {
   registerTeam(){
     this.service.saveTeam(this.team)
        .subscribe(
-         data =>   { console.log(data)}
+         data =>   {
+            //console.log(data)
+          alert(['Team saved successfully'])}
        );
   
   }         

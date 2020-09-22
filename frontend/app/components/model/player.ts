@@ -3,5 +3,6 @@ export class Player {
     playername: string;
     age: number;
     caption: string;
-    playersteam: string
+    playersteam: string;
+    scores:string
 }

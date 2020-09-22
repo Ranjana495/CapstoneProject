@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 //import { RouteGuardService } from './service/route-guard.service';
 import { AddteamComponent } from './addteam/addteam.component';
@@ -13,7 +12,7 @@ const routes: Routes = [
   { path: 'addteam', component: AddteamComponent}, //, canActivate:[RouteGuardService] },
   { path: 'addplayer', component:AddplayerComponent},//, canActivate:[RouteGuardService] },
   { path: 'game', component: GameComponent},//, canActivate:[RouteGuardService] },
- // { path: 'winner', component: WinnerComponent}
+  { path: 'leaderboard', component: LeaderboardComponent}
   //{ path: '**', component: ErrorComponent }
 ];
 

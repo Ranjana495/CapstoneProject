@@ -3,7 +3,9 @@
     <div class="d-block" style="float:left"  *ngFor="let team of teams">
        <h6 class="d-block">{{ team.teamname }} ,</h6>
      </div>
-</div>--><h1>Winner is {{winnerTeam}} {{winnerName}}:{{aaa}} </h1>
+</div>-->
+<app-menu></app-menu>
+<h1>Winner is {{winnerTeam}}{{winnerName}}:{{aaa}} </h1>
 <div class="list-group">
   <h3>Teams</h3>
   <div class="list-group-item" *ngFor="let team of teams">
@@ -88,5 +90,6 @@
   <h6 class="d-block" *ngIf="randomplayer3 ">{{randomplayer3[0].playername}}:{{ts3}} </h6>
   </div>
 </div>
-
+<button  (click)=submitScore() class="btn btn-success" style="margin-right: 30px">Save score</button>
+     
 <!-- <h6 class="d-block" >{{randomplayer3[0].playername}}:{{randc}} </h6> -->

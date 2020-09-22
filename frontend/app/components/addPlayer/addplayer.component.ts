@@ -38,7 +38,7 @@ count:number
        .subscribe(
          data => {
            console.log("Executed")
-           
+           alert(['Player saved successfully'])
          }
          );
 

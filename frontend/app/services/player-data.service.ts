@@ -25,6 +25,16 @@ export class PlayerDataService {
     return this.http.get<Player[]>(`http://localhost:8080/${teamname}/player`);
   }
 
+  updateScore(player,playername,score,prev_score)
+  {
+    return this.http.put(`http://localhost:8080/${playername}/${score}/${prev_score}`,player);
+  }
+
+  getScore()
+  {
+    return  this.http.get<Player[]>(`http://localhost:8080/players/score`);
+  }
+
  /* getRandomPlayersA(){
     console.log("Welcome1");
     return this.http.get<Player[]>('http://localhost:8080/player/Amigos');

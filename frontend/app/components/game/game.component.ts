@@ -83,6 +83,8 @@ export class GameComponent implements OnInit {
         this.randx=(Math.floor(Math.random() * (this.x)+1) )*10;
        console.log(this.randx);
        this.s1+=this.randx;
+       //this.randomplayer1[0].score=
+       
         
        this.y=  parseInt((document.getElementById("number2") as HTMLInputElement).value);
        this.randy=(Math.floor(Math.random() * (this.y)+1))*10 ;
@@ -104,9 +106,12 @@ export class GameComponent implements OnInit {
        else{this.score[j].scoreval=0;}
       }
       if(this.count==3){
-          this.scoreSer.saveScore(this.score).subscribe(
-          data =>{  console.log("Executed")} 
-        )
+           this
+          
+        //this.scoreSer.saveScore(this.score).subscribe(
+          //data =>{  console.log("Executed")} 
+        
+          )
       }*/
 
     }
@@ -131,6 +136,18 @@ export class GameComponent implements OnInit {
      this.randc=(Math.floor(Math.random() * (this.c)+1))*10 ;
      console.log(this.randc);
      this.ts3+=this.randc;
+
+      /* if(this.count1==3)
+       {
+          this.randomplayer1[0].score=this.s1;  this.randomplayer1[1].score=this.ts1; this.randomplayer2[0].score=this.ts2;
+          this.randomplayer2[1].score=this.s2;  this.randomplayer3[0].score=this.ts3;  this.randomplayer3[1].score=this.s3;
+
+          this.services.updateScore(this.randomplayer1,this.randomplayer1[0].playername,this.randomplayer1[0].score,0).
+          subscribe(
+            data =>{  console.log("Executed")} 
+            )
+       }*/
+        
     } 
 
     maxScore(){
@@ -144,5 +161,36 @@ export class GameComponent implements OnInit {
      if(this.aaa==this.ts3){this.winnerName=this.randomplayer3[0].playername;this.winnerTeam=this.randomTeam[2].teamname;}
       // this.message='Winner of the game is  Team Name:this.winnerTeam   Player Name:this.winnerName Score:this.aaa';
        //this.service.changeMessage(this.message);
+
+       //this.randomplayer1[0].score=this.s1;  this.randomplayer1[1].score=this.ts1; this.randomplayer2[0].score=this.ts2;
+       //this.randomplayer2[1].score=this.s2;  this.randomplayer3[0].score=this.ts3;  this.randomplayer3[1].score=this.s3; 
+    }
+
+    submitScore(){
+      this.services.updateScore(this.randomplayer1[0],this.randomplayer1[0].playername,this.s1,this.randomplayer1[0].scores).
+      subscribe(
+        data =>{  console.log("Executed")} 
+        )
+        this.services.updateScore(this.randomplayer1[1],this.randomplayer1[1].playername,this.ts1,this.randomplayer1[1].scores).
+      subscribe(
+        data =>{  console.log("Executed")} 
+        )
+
+        this.services.updateScore(this.randomplayer2[0],this.randomplayer2[0].playername,this.ts2,this.randomplayer2[0].scores).
+      subscribe(
+        data =>{  console.log("Executed")} 
+        )
+        this.services.updateScore(this.randomplayer2[1],this.randomplayer2[1].playername,this.s2,this.randomplayer2[1].scores).
+      subscribe(
+        data =>{  console.log("Executed")} 
+        )
+        this.services.updateScore(this.randomplayer3[0],this.randomplayer3[0].playername,this.ts3,this.randomplayer3[0].scores).
+      subscribe(
+        data =>{  console.log("Executed")} 
+        )
+        this.services.updateScore(this.randomplayer3[1],this.randomplayer3[1].playername,this.s3,this.randomplayer3[1].scores).
+      subscribe(
+        data =>{  console.log("Executed")} 
+        )
     }
 }
